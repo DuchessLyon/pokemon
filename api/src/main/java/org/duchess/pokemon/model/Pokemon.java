@@ -1,15 +1,64 @@
 package org.duchess.pokemon.model;
 
-public class Pokemon{
+import java.util.Date;
+
+/**
+ * Représente un pokémon "vivant".
+ * @author winry
+ */
+public class Pokemon {
     
-    private String name;
+    private Caracteristic caracteristic;
     
-    public void setName(String _name){
-        this.name = _name;
+    private Date birthdate;
+    
+    private Gender gender;
+    
+    private int id;
+    
+    //Niveau pour l'évolution
+    private int level=0;
+
+    public Caracteristic getCaracteristic() {
+        return caracteristic;
+    }
+
+    public void setCaracteristic(Caracteristic caracteristic) {
+        this.caracteristic = caracteristic;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
     
-    public String getName(){
-        return this.name;
-    }
     
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
+
+
