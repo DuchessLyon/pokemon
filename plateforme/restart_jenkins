@@ -1,0 +1,4 @@
+#/bin/bash
+
+docker rm -f poke_jenkins
+docker run -d -p 8080:8080 -p 50000:50000 -v /APP/jenkins:/var/jenkins_home --name poke_jenkins jenkins:2.7.2
