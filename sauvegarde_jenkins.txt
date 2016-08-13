@@ -1,0 +1,11 @@
+IS_SERVICE_RUNNING=`sudo docker ps -a | grep pokemon | wc -l`
+
+if [ ${IS_SERVICE_RUNNING} = "1" ]
+then
+	sudo docker rm -f pokemon-api
+fi
+
+sudo rm -Rf /APP/pokemon/*
+sudo cp -R $WORKSPACE/* /APP/pokemon/
+
+sudo docker run -d --name pokemon-api -p 80:8080 -v /APP/pokemon/api:/tmp -w /tmp maven:3.3.3-jdk-8 mvn spring-boot:run
